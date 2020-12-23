@@ -1,20 +1,19 @@
 <template>
     <div class="NavAll">
-        <div class="log">
-            <img src="../../static/img/logo1.png" alt="" class="NavImg">
-            
+        <div class="log" @click="clickimg">
+            <img src="../../static/img/logo1.png" alt="" class="NavImg">   
         </div>
-        <Menu mode="horizontal" :theme="theme1" active-name="1" class="Menu">
-            <MenuItem name="1" class="text">
+        <Menu mode="horizontal" :theme="theme1" active-name="1" class="Menu" @on-select="menuSelect">
+            <MenuItem name="homec" class="text">
                 首页
             </MenuItem>
-            <MenuItem name="2" class="text">
+            <MenuItem name="product" class="text">
                 产品
             </MenuItem>
-            <MenuItem name="3" class="text">
+            <MenuItem name="resolve" class="text">
                 解决方案
             </MenuItem>
-            <MenuItem name="4" class="text">
+            <MenuItem name="aboutUs" class="text">
             关于我们
             </MenuItem>
         </Menu>
@@ -25,6 +24,14 @@
         data () {
             return {
                 theme1: 'dark'
+            }
+        },
+        methods:{
+            menuSelect(name){
+                this.$router.push({ path: name, replace: true });
+            },
+            clickimg(){
+                this.$router.push({ path: "homec", replace: true });
             }
         }
     }
@@ -41,8 +48,8 @@
         left: 250px;
         text-align: center;
         .NavImg{
-            width: 208px;
-            height: 65px;
+            // width: 208px;
+            // height: 65px;
             display: inline-block;
         }
     }
