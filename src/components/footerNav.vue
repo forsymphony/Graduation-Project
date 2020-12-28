@@ -44,7 +44,7 @@
       </ul>
     </div>
     <div class="footerB">
-        <p>Copyright © 2017 by <a href="https://github.com/forsymphony/Graduation-Project">forsymphony</a> All Rights Reserved</p>
+        <p>Copyright © 2021 by <a href="https://github.com/forsymphony/Graduation-Project">forsymphony</a> All Rights Reserved</p>
     </div>
   </div>
 </template>
@@ -55,7 +55,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" >
 .footer{
   width: 1920px;
   height: 325px;
