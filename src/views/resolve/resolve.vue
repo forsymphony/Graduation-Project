@@ -9,16 +9,20 @@
               <div class="showimg">
                 <img class="showimg1" src="http://qiniu.terabits.cn/solve01.jpg" alt="">
               </div>
-              <div class="imgcontent"></div>
+              <div class="imgcontent">
+                无线传感器网络节点更换电池
+              </div>
             </div>
           </div>
           <div class="show1">
             <div class="title">新能源汽车智能监控系统解决</div>
             <div class="img1">
               <div class="showimg">
-                <img src="http://qiniu.terabits.cn/solve03.jpg" alt="">
+                <img class="showimg1" src="http://qiniu.terabits.cn/solve03.jpg" alt="">
               </div>
-              <div class="imgcontent"></div>
+              <div class="imgcontent">
+                汽车数据智能采集可视化平台
+              </div>
             </div>
           </div>
         </div>
@@ -47,8 +51,7 @@ export default {
     }
     .show1Area{
       display: flex;
-      justify-content: space-around;
-      
+      justify-content: space-evenly;
       .show1{
         width: 23%;
         height: 500px;
@@ -59,8 +62,13 @@ export default {
         position: relative;
         transition: all .3s;
         border: 1px solid #eee;
+        direction: 0.5s;
+      }
+      .show1:hover{
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
       }
       .title{
+        font-size: 14px;
         width: 100%;
         height: 48px;
         line-height: 48px;
@@ -76,13 +84,23 @@ export default {
       .img1{
         .showimg{
           // width: 100%;
-          .shoimg1{
-            width: 355px;
-            height: 417px;
+          .showimg1{
+              width: 100%;
+              height: auto;
+              padding: 24px;
+              opacity: 0.9;
+              direction: 0.5s;
           }
+          .showimg1:hover{
+            opacity: 1;
+          } 
         }
         .imgcontent{
-
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-left: -78px;
+          color: white;
         }
       }
     }

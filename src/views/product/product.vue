@@ -83,7 +83,7 @@ export default {
 
 <style lang="less" scoped>
 .product{
-  width: 1920px;
+  width: 100%;
   .productArea{
     background: #eee;
     width: 65%;

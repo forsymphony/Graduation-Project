@@ -39,7 +39,7 @@
 
 <style scoped lang="less">
 .NavAll{
-    width: 1920px;
+    width: 100%;
     height: 64px;
     position: relative;
     background: #333333;

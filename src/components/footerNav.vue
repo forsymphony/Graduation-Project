@@ -57,7 +57,7 @@ export default {
 
 <style lang="less" >
 .footer{
-  width: 1920px;
+  width: 100%;
   height: 325px;
   background-color: #333333;
   display: flex;
@@ -69,7 +69,7 @@ export default {
     margin-top: 40px;
     ul{
       .img{
-
+        display: none;
     } 
     .product{
 
@@ -94,7 +94,7 @@ export default {
   }
    .footerB{
       position: absolute;
-      width: 1920px;
+      width: 100%;
       height: 35px;
       border-top: 1px solid #666;
       text-align: center;
