@@ -75,6 +75,11 @@
         center: [116.397428, 39.90923],//中心点坐标
         viewMode:'3D'//使用3D视图
       });
+      var marker = new AMap.Marker({
+          position: new AMap.LngLat(116.39, 39.9),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+          title: '北京'
+      });
+      map.add(marker);
      }
     }
   }
