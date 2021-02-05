@@ -4,6 +4,7 @@
       <ul>
         <li class="img">
           <p><img src="../../static/img/logo1.png" alt=""></p>
+          <!--  1920*1080 136*60  官网logo -->
           <p>诚信为本 科技至上</p>
         </li>
         <li class="product">
@@ -37,6 +38,7 @@
             <li>
               <p>
                 <img src="../../static/img/erweima.png" alt="" class="see">
+                <!-- 官网二维码 -->
               </p>
             </li>
           </ul>
@@ -58,6 +60,7 @@ export default {
 <style lang="less" >
 .footer{
   width: 100%;
+  min-width: 850px;
   height: 325px;
   background-color: #333333;
   display: flex;
@@ -69,7 +72,7 @@ export default {
     margin-top: 40px;
     ul{
       .img{
-        display: none;
+        // display: none;
     } 
     .product{
 
@@ -122,6 +125,7 @@ export default {
 li {
    list-style:none;
    cursor: default;
+   padding-bottom: 6px;
 }
 // @keyframes myBig{
 //   // 0%{width: 30px;height: 30px;}

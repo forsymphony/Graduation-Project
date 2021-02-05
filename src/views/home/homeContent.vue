@@ -7,6 +7,7 @@
             <div class="bigger">
               <div>
                 <img src="../../../static/img/content/bigger.png" alt="">
+                <!-- 11920*1080   115*115 下两张同 -->
               </div>
               <div class="title">聚焦</div>
               <div class="content">高素质人才团队，专注于技术研发</div>
@@ -39,6 +40,7 @@
             </div>
             <div class="showImg">
               <img src="../../../static/img/content/img2.png" alt="" class="Img">
+              <!-- 11920*1080   265*265 下一张同 -->
           </div>
         </div>
         </div>
@@ -66,7 +68,9 @@
             <div class="Adshow">
               <div class="Adshow1">
                 <div class="showitem1-img">
-                  <img src="../../../static/img/content/smallicon.png" alt=""  class="img1">
+                  <div class="text"></div>
+                  <!-- <img src="../../../static/img/content/smallicon.png" alt=""  class="img1"> -->
+                  <!-- 11920*1080   42*38 -->
                 </div>
                 <div class="item1-Introduce">
                   <h1 class="item1-title">智能城市管理</h1>
@@ -204,15 +208,24 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.text{
+  width: 42px;
+  height: 38px;
+  background: red;
+}
 h1{
   margin: 0;
 }
 .homeContent{
   width: 100%;
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
+  // margin: 0 auto; 
+  // text-align: center;
   .contentArea{
     width: 1440px;
+    margin: 0 auto; 
+  text-align: center;
     .whyus{
       width: 1440px;
       height: 480px;

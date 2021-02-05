@@ -1,7 +1,8 @@
 <template>
     <div class="NavAll">
         <div class="log" @click="clickimg">
-            <img src="../../static/img/logo1.png" alt="" class="NavImg">   
+            <img src="../../static/img/logo1.png" alt="" class="NavImg"> 
+              <!--  1920*1080 136*60  官网logo -->
         </div>
         <Menu mode="horizontal" :theme="theme1" active-name="1" class="Menu" @on-select="menuSelect">
             <MenuItem name="homec" class="text">
@@ -40,6 +41,7 @@
 <style scoped lang="less">
 .NavAll{
     width: 100%;
+    min-width: 1920px;
     height: 64px;
     position: relative;
     background: #333333;

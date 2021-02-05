@@ -46,7 +46,7 @@
               <div class="vx1">
                 <div class="vx2">
                   <div class="vx3">
-                    <img src="http://my.terabits.cn/QR.jpg" alt="" class="vx3Img">
+                    <img src="../../../static/img/aboutUs/QR.jpg" alt="" class="vx3Img">
                   </div>
                   <div class="vx31">
                     <p class="vx31P">扫一扫，关注微信公众号</p>
