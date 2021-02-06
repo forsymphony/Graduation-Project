@@ -20,7 +20,7 @@
               <div class="showimg">
                 <img class="showimg1" src="../../../static/img/resolve/solve03.jpg" alt="">
               </div>
-              <div class="imgcontent">
+              <div class="imgContent">
                 汽车数据智能采集可视化平台
               </div>
             </div>
@@ -83,20 +83,20 @@ export default {
         font-weight: 500;
       }
       .img1{
-        .showimg{
+        .showImg{
           // width: 100%;
-          .showimg1{
+          .showImg1{
               width: 100%;
               height: auto;
               padding: 24px;
               opacity: 0.9;
               direction: 0.5s;
           }
-          .showimg1:hover{
+          .showImg1:hover{
             opacity: 1;
           } 
         }
-        .imgcontent{
+        .imgContent{
           position: absolute;
           top: 50%;
           left: 50%;

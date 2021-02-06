@@ -28,14 +28,14 @@
         <h1>毫米波产品</h1>
         <div class="module3">
           <div class="module3Area">
-            <div class="module3button" v-for="(val,index) in module3List" :key="index">
+            <div class="module3Button" v-for="(val,index) in module3List" :key="index">
               <div class="button3Area">
                 <button class="button3">{{val.title}}</button>
               </div>
             </div>
           </div>
           <div class="button3All">
-            <button class="A3button">下载文档</button>
+            <button class="A3Button">下载文档</button>
           </div>
         </div>
      </div>
@@ -130,7 +130,7 @@ export default {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        .module3button{
+        .module3Button{
           margin: 5px 0;
           padding: 0 5px;
           width: 33.333333%;
@@ -166,7 +166,7 @@ export default {
       .button3All{
         margin: 0 auto;
         padding: 0 40px;
-        .A3button{
+        .A3Button{
           width: 26.666%;
           height: 45px;
           margin-top: 20px;

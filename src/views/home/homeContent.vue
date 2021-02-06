@@ -1,8 +1,8 @@
 <template>
   <div class="homeContent">
       <div class="contentArea">
-        <div class="whyus">
-          <h2 class="whyh2">凭撒子选我们？</h2>
+        <div class="whyUs">
+          <h2 class="whyH2">凭撒子选我们？</h2>
           <div class="whyArea">
             <div class="bigger">
               <div>
@@ -65,70 +65,70 @@
               <h1>依托白给大学技术力量</h1>
               <p>创始人为摸鱼打诨、聊天八卦、键盘打拳领域专家</p>
             </div>
-            <div class="Adshow">
-              <div class="Adshow1">
-                <div class="showitem1-img">
+            <div class="AdShow">
+              <div class="AdShow1">
+                <div class="showItem1Img">
                   <div class="text"></div>
                   <!-- <img src="../../../static/img/content/smallicon.png" alt=""  class="img1"> -->
                   <!-- 11920*1080   42*38 -->
                 </div>
-                <div class="item1-Introduce">
-                  <h1 class="item1-title">智能城市管理</h1>
-                  <p class="item1-content">云平台实时监控，智能掌控城市居民，农业设备运行数据。</p>
+                <div class="item1Introduce">
+                  <h1 class="item1Iitle">智能城市管理</h1>
+                  <p class="item1Content">云平台实时监控，智能掌控城市居民，农业设备运行数据。</p>
                 </div>
               </div>
-              <div class="Adshow1">
-                <div class="showitem1-img">
+              <div class="AdShow1">
+                <div class="showItem1Img">
                   <img src="../../../static/img/content/smallicon.png" alt=""  class="img1">
                 </div>
-                <div class="item1-Introduce">
-                  <h1 class="item1-title">物联网平台</h1>
-                  <p class="item1-content">自主研发的产品包括NB-IoT窄带物联网电力抄表系统、NB-IoT终端开发平台</p>
+                <div class="item1Introduce">
+                  <h1 class="item1Title">物联网平台</h1>
+                  <p class="item1Content">自主研发的产品包括NB-IoT窄带物联网电力抄表系统、NB-IoT终端开发平台</p>
                 </div>
               </div>
-              <div class="Adshow1">
-                <div class="showitem1-img">
+              <div class="AdShow1">
+                <div class="showItem1Img">
                   <img src="../../../static/img/content/smallicon.png" alt=""  class="img1">
                 </div>
-                <div class="item1-Introduce">
-                  <h1 class="item1-title">移动</h1>
-                  <p class="item1-content">一站式移动PC平台实时监控，动态触手可及。</p>
+                <div class="item1Introduce">
+                  <h1 class="item1Title">移动</h1>
+                  <p class="item1Content">一站式移动PC平台实时监控，动态触手可及。</p>
                 </div>
               </div>
-              <div class="Adshow1">
-                <div class="showitem1-img">
+              <div class="AdShow1">
+                <div class="showItem1Img">
                   <img src="../../../static/img/content/smallicon.png" alt=""  class="img1">
                 </div>
-                <div class="item1-Introduce">
-                  <h1 class="item1-title">大数据</h1>
-                  <p class="item1-content">一站式、全周期大数据协同工作平台，PB级数据处理、毫秒级数据分析工具。</p>
+                <div class="item1Introduce">
+                  <h1 class="item1Title">大数据</h1>
+                  <p class="item1Content">一站式、全周期大数据协同工作平台，PB级数据处理、毫秒级数据分析工具。</p>
                 </div>
               </div>
-              <div class="Adshow1">
-                <div class="showitem1-img">
+              <div class="AdShow1">
+                <div class="showItem1Img">
                   <img src="../../../static/img/content/smallicon.png" alt=""  class="img1">
                 </div>
-                <div class="item1-Introduce">
-                  <h1 class="item1-title">毫米波产品</h1>
-                  <p class="item1-content">欧洲著名毫米波厂家ELVA-1中国区授权代理。</p>
+                <div class="item1Introduce">
+                  <h1 class="item1Title">毫米波产品</h1>
+                  <p class="item1Content">欧洲著名毫米波厂家ELVA-1中国区授权代理。</p>
                 </div>
               </div>
-              <div class="Adshow1">
-                <div class="showitem1-img">
+              <div class="AdShow1">
+                <div class="showItem1Img">
                   <img src="../../../static/img/content/smallicon.png" alt=""  class="img1">
                 </div>
-                <div class="item1-Introduce">
-                  <h1 class="item1-title">智能城市管理</h1>
-                  <p class="item1-content">云平台实时监控，智能掌控城市居民，农业设备运行数据。</p>
+                <div class="item1Introduce">
+                  <h1 class="item1Title">智能城市管理</h1>
+                  <p class="item1Content">云平台实时监控，智能掌控城市居民，农业设备运行数据。</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="Newitem2">
+        <div class="NewItem2">
           <div class="newArea">
             <h2 class="newTitle">热点动态</h2>
-            <div class="show2-item">
+            <div class="show2Item">
               <div class="shadow">
                 <Tabs value="name1" @on-click="changeTbs">
                   <TabPane label="公司动态" name="name1">
@@ -226,12 +226,12 @@ h1{
     width: 1440px;
     margin: 0 auto; 
   text-align: center;
-    .whyus{
+    .whyUs{
       width: 1440px;
       height: 480px;
       margin-top: 184px;
       text-align: center;
-      .whyh2{
+      .whyH2{
         width: 1440px;
         text-align: center;
         margin: 50px 0;
@@ -352,19 +352,19 @@ h1{
         .AdTitle > h1{
           margin: 20px auto;
         }
-        .Adshow{
+        .AdShow{
           position: relative;
           top: 20%;
           height: 60%;
           display: flex;
           justify-content: space-between;
           flex-wrap: wrap;
-          .Adshow1{
+          .AdShow1{
             // display: inline-block;
             width: 33.33%;
             // height: 200px;
             padding: 6% 5% 0;
-            .showitem1-img{
+            .showItem1Img{
               display: inline-block;
               width: 15%;
               margin-top: 2%;
@@ -374,7 +374,7 @@ h1{
                 // height: 46px;
               }
             }
-            .item1-Introduce{
+            .item1Introduce{
               width: 85%;
               display: inline-block;
               float: right;
@@ -391,7 +391,7 @@ h1{
         }
       }
     }
-    .Newitem2{
+    .NewItem2{
       margin-top: 170px;
       .newArea{
          padding-top: 20px;
@@ -404,7 +404,7 @@ h1{
         text-align: center;
         color: #222;
       }
-      .show2-item{
+      .show2Item{
        margin-top: 60px;
         .shadow{
           box-shadow:  0px 8px 10px -10px rgba(76, 150, 255, 0.15);

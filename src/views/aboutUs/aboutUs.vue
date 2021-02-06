@@ -1,7 +1,7 @@
 <template>
   <div class="aboutUs">
       <div class="aboutArea">
-        <div class="AreaArea">
+        <div class="areaArea">
           <h2 style="margin-top:10px;">
             <i class="iconfont">&#xe617;</i>
             企业介绍
@@ -90,7 +90,7 @@
   .aboutArea{
     width: 80%;
     margin: 0 auto;
-    .AreaArea{
+    .areaArea{
       width: 80%;
       margin: 0 auto;
       h2{
