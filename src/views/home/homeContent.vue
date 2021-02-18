@@ -83,7 +83,7 @@
                 </div>
                 <div class="item1Introduce">
                   <h1 class="item1Title">物联网平台</h1>
-                  <p class="item1Content">自主研发的产品包括NB-IoT窄带物联网电力抄表系统、NB-IoT终端开发平台</p>
+                  <p class="item1Content">自主研发的产品包括NB-IoT窄带物联网电力抄表系统、NB-IoT终端开发平台。</p>
                 </div>
               </div>
               <div class="AdShow1">

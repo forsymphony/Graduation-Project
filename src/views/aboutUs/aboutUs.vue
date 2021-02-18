@@ -97,7 +97,7 @@
         color: #121212;
         font-size: 24px;
         margin-top: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 20px;  
       }
       .introduction{
         font-size: 14px;
