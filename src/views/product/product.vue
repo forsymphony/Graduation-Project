@@ -7,7 +7,9 @@
             <div class="Area1List">
               <div class="List1" v-for="(val,index) in module1List" :key="index">
                 <div class="shadows">
-                  <img :src="val.src" alt="" class="List1Img">
+                  <div class="img">
+                    <img :src="val.src" alt="" class="List1Img">
+                  </div>
                 </div>
               </div>
             </div>
@@ -19,7 +21,9 @@
             <div class="Area1List">
               <div class="List1" v-for="(val,index) in module2List" :key="index">
                 <div class="shadows">
-                  <img :src="val.src" alt="" class="List1Img">
+                  <div class="img">
+                    <img :src="val.src" alt="" class="List1Img">
+                  </div>
                 </div>
               </div>
             </div>
@@ -110,14 +114,20 @@ export default {
               width: 72%;
               margin: 20px auto;
               background-color: #fafafa;
-            .List1Img:hover{
-              box-shadow: 3px 3px 5px #6f6f6f;
-            }
-              .List1Img{
+              .img{
                 transition-duration: 0.4s;
-                width:100%;
-	              height:auto;
+                // .List1Img:hover{
+                //   box-shadow: 3px 3px 5px #6f6f6f;
+                // }
+                .List1Img{
+                  // transition-duration: 0.4s;
+                  width:100%;
+                }
               }
+              .img:hover{
+                box-shadow: 3px 3px 5px #6f6f6f;
+              }
+
             }
           }
         }

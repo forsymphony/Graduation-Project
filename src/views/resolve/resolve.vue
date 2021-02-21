@@ -6,10 +6,10 @@
           <div class="show1">
             <div class="title">移动充电与感知应用</div>
             <div class="img1">
-              <div class="showimg">
-                <img class="showimg1" src="../../../static/img/resolve/solve01.jpg" alt="">
+              <div class="showImg">
+                <img class="showImg1" src="../../../static/img/resolve/solve01.jpg" alt="">
               </div>
-              <div class="imgcontent">
+              <div class="imgContent">
                 无线传感器网络节点更换电池
               </div>
             </div>
@@ -17,8 +17,8 @@
           <div class="show1">
             <div class="title">新能源汽车智能监控系统解决</div>
             <div class="img1">
-              <div class="showimg">
-                <img class="showimg1" src="../../../static/img/resolve/solve03.jpg" alt="">
+              <div class="showImg">
+                <img class="showImg1" src="../../../static/img/resolve/solve03.jpg" alt="">
               </div>
               <div class="imgContent">
                 汽车数据智能采集可视化平台
