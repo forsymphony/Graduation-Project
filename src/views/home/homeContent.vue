@@ -1,5 +1,5 @@
 <template>
-  <div class="homeContent">
+  <div class="homeContent" ref="pronbit">
       <div class="contentArea">
         <div class="whyUs">
           <h2 class="whyH2">凭撒子选我们？</h2>
@@ -189,6 +189,9 @@ export default {
       pageSize:5
     }
   },
+  mounted() {
+    window.addEventListener('scroll',this.handleScrollx,true)
+  },
   methods:{
     change(a){
       if(this.total == 14 )
@@ -202,7 +205,11 @@ export default {
       }
       else
       this.total = 5
-    }
+    },
+    handleScrollx() {
+      console.log('滚动高度',window.pageYOffset)
+      console.log('距离顶部高度',this.$refs.pronbit.getBoundingClientRect().top)
+    },
   }
 }
 </script>

@@ -65,23 +65,40 @@
   // var map
   export default {
     mounted(){
-      this.loadMap()
+      // console.log(this.$store.state.count);
+      setTimeout(()=>{
+        this.loadMap()
+      },1500)
     },
     methods: {
      loadMap() {
 			const _this = this;
 			var map = new AMap.Map('container', {
         zoom:11,//级别
-        center: [116.397428, 39.90923],//中心点坐标
+        center: [120.445924,29.960065],//中心点坐标
         viewMode:'3D'//使用3D视图
       });
       var marker = new AMap.Marker({
-          position: new AMap.LngLat(116.39, 39.9),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+          position: new AMap.LngLat(120.445924,29.960065),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
           title: '北京'
       });
       map.add(marker);
      }
-    }
+    },
+    // computed: {
+    //   count() {
+    //     return this.$store.state.count
+    //   }
+    // },
+    // //监听执行
+    // watch: {
+    //   count(val) {
+    //     // if(val == 1)
+        
+    //     this.loadMap()
+    //     console.log(this.$store.state.count);
+    //   }
+    // },
   }
 </script>
 

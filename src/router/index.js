@@ -6,6 +6,8 @@ import aboutUs from '@/views/aboutUs/aboutUs'
 import homeC from '@/views/home/homeContent'
 import product from '@/views/product/product'
 import resolve from '@/views/resolve/resolve'
+import one from '@/views/resolve/one'
+import two from '@/views/resolve/two'
 Vue.use(Router)
 
 const originalPush = Router.prototype.push
@@ -14,6 +16,7 @@ Router.prototype.push = function push(location) {
 }
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -41,8 +44,18 @@ export default new Router({
           path:'/resolve',
           name:'resolve',
           component: resolve
-        },
+        }
       ]
-    }
+    },
+    {
+      path:'/resolve1',
+      name:'one',
+      component: one
+    },
+    {
+      path:'/resolve2',
+      name:'two',
+      component: two
+    },
   ]
 })
