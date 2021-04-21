@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-12-29 09:26:04
+ * @LastEditTime: 2021-04-12 20:00:13
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Graduation-Project\src\main.js
+ */
 import Vue from 'vue'
 import App from './App'
 import router from './router'
@@ -12,11 +20,13 @@ import BaiduMap from 'vue-baidu-map'
 import * as echarts from 'echarts'
 import dataV from '@jiaminghi/data-view'
 import china from 'echarts/map/json/china.json' // 引入json文件
+import axios from 'axios'
 
 echarts.registerMap('china', china) // 在echarts中注册使用这个文件
 
 Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
+Vue.prototype.$axios = axios
 
 Vue.use(dataV)
 Vue.use(iView);

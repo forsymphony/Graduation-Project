@@ -1,5 +1,13 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-08 09:59:39
+ * @LastEditTime: 2021-04-09 18:59:39
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \Graduation-Project\src\components\dataVI\superOrders.vue
+-->
 <template>
-  <dv-scroll-board :config="config" style="width:438;height:533px;margin-top: 25px;" />
+  <dv-scroll-board :config="config" style="" class="aa"/>
 </template>
 
 <script>
@@ -71,5 +79,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+.aa{
+  width:438;height:533px;margin-top: 25px;
+}
 </style>

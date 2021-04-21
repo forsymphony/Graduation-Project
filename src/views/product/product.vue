@@ -32,7 +32,7 @@
         <h1>毫米波产品</h1>
         <div class="module3">
           <div class="module3Area">
-            <div class="module3Button" v-for="(val,index) in module3List" :key="index">
+            <div class="module3Button" id="module3Button" v-for="(val,index) in module3List" :key="index">
               <div class="button3Area">
                 <button class="button3">{{val.title}}</button>
               </div>
@@ -105,12 +105,17 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@media screen and (max-width: 676px){
+  #module3Button{
+    width: 90%;
+  }
+}
 .product{
   width: 100%;
   .productArea{
     background: #eee;
     width: 65%;
-    min-width: 875px;
+    // min-width: 875px;
     margin: 0px auto 70px;
     text-align: center;
     h1{
@@ -163,6 +168,7 @@ export default {
           margin: 5px 0;
           padding: 0 5px;
           width: 33.333333%;
+          // width:90%;
           .button3Area{
             .button3{
               width: 80%;

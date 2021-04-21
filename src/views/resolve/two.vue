@@ -28,7 +28,7 @@
         </div>
         <div class="finish">
           <div class="fTitle">完成百分比</div>
-          <div id="main" style="width: 540px;height:27px;float:right"></div>
+          <div id="main"></div>
         </div>
         <div class="cloudWord">
           <div class="mTitleS1">热门搜索词</div>
@@ -378,5 +378,10 @@ export default {
   //   left: 1400px;
   //   top: 300px;
   // }
+}
+#main{
+  width: 540px;
+  height:27px;
+  float:right;
 }
 </style>

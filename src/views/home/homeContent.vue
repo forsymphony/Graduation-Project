@@ -208,7 +208,7 @@ export default {
     },
     handleScrollx() {
       console.log('滚动高度',window.pageYOffset)
-      console.log('距离顶部高度',this.$refs.pronbit.getBoundingClientRect().top)
+      // console.log('距离顶部高度',this.$refs.pronbit.getBoundingClientRect().top)
     },
   }
 }
@@ -230,16 +230,16 @@ h1{
   // margin: 0 auto; 
   // text-align: center;
   .contentArea{
-    width: 1440px;
+    // width: 1440px;
     margin: 0 auto; 
   text-align: center;
     .whyUs{
-      width: 1440px;
+      // width: 1440px;
       height: 480px;
       margin-top: 184px;
       text-align: center;
       .whyH2{
-        width: 1440px;
+        // width: 1440px;
         text-align: center;
         margin: 50px 0;
         font-size: 26px;
@@ -267,7 +267,7 @@ h1{
       }
     }
     .show1{
-      width: 1440px;
+      // width: 1440px;
       height: 485px;
       display: flex;
       justify-content: center;

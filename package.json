@@ -16,6 +16,7 @@
     "iview": "^3.5.4",
     "less": "^4.0.0",
     "normalize.css": "^8.0.1",
+    "postcss-px2rem": "^0.3.0",
     "vue": "^2.5.2",
     "vue-amap": "^0.5.10",
     "vue-baidu-map": "^0.21.22",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "axios": "^0.21.1",
     "babel-core": "^6.22.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.1",
