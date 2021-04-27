@@ -9,6 +9,11 @@
 <template>
   <div class="all">
       <div class="top">
+            <img src="../../../static/img/resolve/three/标题背景@2x.png" alt="" class="topImg1">
+            <div class="middenTitle">
+                <img src="../../../static/img/resolve/three/LOGO@2x.png" alt="" class="middenTitleImg1">
+                <img src="../../../static/img/resolve/three/大标题@2x.png" alt="" class="middenTitleImg2">
+            </div>
             <div class="weather">
                 <img :src="`../../../static/img/resolve/three/${showImg}.png`" alt="">
                 <span>
@@ -28,11 +33,18 @@
         <div class="left">
             <temperature></temperature>
             <humidity></humidity>
-            <co2></co2>
             <light></light>
         </div>
+        <img src="../../../static/img/resolve/three/定位@2x.png" alt="" class="point">
+        <div class="centerBack">
+            <img src="../../../static/img/resolve/three/center.jpg" alt="">
+        </div>
         <div class="bottom">
-            <runway></runway>
+            <co2 ref="co2"></co2>
+        </div>
+        <div class="right">
+            <img src="../../../static/img/resolve/three/大棚背景图@2x.png" alt="" class="greenhouseBack">
+            <power></power>
         </div>
       <!-- <img src="../../../static/img/resolve/three/backImg.png" alt=""> -->
   </div>
@@ -43,7 +55,7 @@ import temperature from '../../components/dataVI/temperature'
 import humidity from '../../components/dataVI/humidity'
 import co2 from '../../components/dataVI/co2'
 import light from '../../components/dataVI/light'
-import runway from '../../components/dataVI/runway'
+import power from '../../components/dataVI/power'
 
 export default {
     data(){
@@ -57,12 +69,50 @@ export default {
         humidity,
         co2,
         light,
-        runway
+        power
     },
     mounted(){
+        window.scrollTo(0,0)
         this.loadData()
+        this.getData()
+        this._GXResizeEvent()
+        window.addEventListener("resize", this._GXResizeEvent)
+        //deviceName:460049838501462  460049838501463 460049838501464
+    },
+    beforeDestroy(){
+        removeEventListener('resize',this._GXResizeEvent)
+        document.body.style.transform = 'scale(1,1)'
+        document.body.style.msTransform = 'scale(1,1)'
+        document.body.style.mozTransform = 'scale(1,1)'
+        document.body.style.webkitTransform = 'scale(1,1)'
+        document.body.style.oTransform = 'scale(1,1)'
+        document.body.style.transformOrigin = '50% 50% 0'
+        document.body.style.backgroundSize = 'auto'
+        document.body.style.overflow = 'visible'
     },
     methods:{
+        _GXResizeEvent() {
+            const nDefault_width = 1920;
+            const nDefault_height = 1080;
+            const nClient_width = document.documentElement.clientWidth;
+            const nClient_height = document.documentElement.clientHeight;
+            const nAuot_width = nClient_width / nDefault_width;
+            const nAuot_height = nClient_height / nDefault_height;
+            const jNodeBody = document.body;
+            if(nAuot_width>nAuot_height){
+                jNodeBody.style.transform = `scale(${nAuot_width},${nAuot_height})`;
+                jNodeBody.style.msTransform = `scale(${nAuot_width},${nAuot_height})`;
+                jNodeBody.style.mozTransform = `scale(${nAuot_width},${nAuot_height})`;
+                jNodeBody.style.webkitTransform = `scale(${nAuot_width},${nAuot_height})`;
+                jNodeBody.style.oTransform = `scale(${nAuot_width},${nAuot_height})`;
+                jNodeBody.style.transformOrigin = 'left top';
+                jNodeBody.style.backgroundSize = "100%";
+                jNodeBody.style.overflow = 'hidden';
+            }
+        },
+        logData(){
+            this.$refs.co2.getData('460049838501463')
+        },
         loadData(){
             this.$axios.get('https://restapi.amap.com/v3/weather/weatherInfo?key=da42475dc14a0de6dd2377da0506f796&city=330600').then(
                 (res)=>{
@@ -116,18 +166,27 @@ export default {
                     }
                 }
             )
+        },
+        getData(){
+            this.$axios.get('/api/DeviceInfoController/getAllDeviceInfos').then(
+                (res)=>{
+                    console.log(res)
+                }
+            )
         }
     }
 }
 </script>
-// 330600
 <style lang="less" scoped>
 .all{
     width:1920px;
     height: 1080px;
-    background: red;
+    // background: red;
+    // width: 100%;
+    // height: 100%;
     background: url("../../../static/img/resolve/three/backImg.png");
     background-size: 1920px 1080px;
+    // background-size:100vw 100vh;
     position: relative;
     .top{
         // img{
@@ -140,9 +199,36 @@ export default {
         //     background: linear-gradient(0deg, #A5FFEB 0%, #FFFFFF 100%);
         //     display: inline-block;
         // }
+        .topImg1{
+            width:100%;
+            position: absolute;
+            z-index:1;
+        }
+        .middenTitle{
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 31px;
+            .middenTitleImg1{
+                display: inline-block;
+                width: 64px;
+                height: 68px;
+                margin-right: 22px;
+                vertical-align: middle;
+            }
+            .middenTitleImg2{
+                display: inline-block;
+                width: 706px;
+                height: 55px;
+                vertical-align: middle;
+            }
+        }
         .weather{
-            float: right;
-            margin-right: 19px;
+            z-index: 2;
+            position: absolute;
+            right: 19px;
+            top:10px;
             img{
                 width: 53px;
                 height: 53px;
@@ -190,13 +276,46 @@ export default {
     }
     .left{
         position: absolute;
-        top: 145px;
-        left: 30px;
+        top: 100px;
+        left: 15px;
     }
     .bottom{
         position: absolute;
-        left: 600px;
-        top: 700px;
+        top: 742px;
+        left:530px;
+    }
+    .point{
+        width: 27px;
+        height: 31px;
+        position: absolute;
+        top: 432px;
+        left: 685px;
+    }
+    .centerBack{
+        width: 305px;
+        height: 197px;
+        border-radius: 10px;
+        background: #FFFFFF;
+        position: absolute;
+        top: 231px;
+        left: 709px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            width: 295px;
+            height: 187px;
+            border-radius: 5px;
+        }
+    }
+    .right{
+        position: absolute;
+        left:1206px;
+        top: 100px;
+        .greenhouseBack{
+            width: 699px;
+            height: 636px;
+        }
     }
 }
 </style>

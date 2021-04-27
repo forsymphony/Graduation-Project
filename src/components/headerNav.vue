@@ -53,7 +53,6 @@
 		watch: {
 			returnFlag:{
 				handler:function(val){
-					console.log(val)
 					this.small = val
 				}
 			}
@@ -171,14 +170,14 @@
 		display: none;
 	}
 	.NavAll{
-		width: 1920px;
+		// width: 1920px;
 		// min-width: 100%;
 		height: 64px;
 		position: relative;
 		background: #333333;
 		.log{
 			position: absolute;
-			left: 250px;
+			left: 13%;
 			text-align: center;
 			.NavImg{
 				width: 136px;
@@ -188,8 +187,8 @@
 		}
 		.Menu{
 			position: absolute;
-			left: 500px;
-			width: 1000px;
+			left: 30%;
+			// width: 1000px;
 			background: #333333;
 			color:white;
 			.text{

@@ -100,8 +100,12 @@ export default {
     }
   },
   mounted(){
+    window.scrollTo(0,0)
     this.getDate()
     this.getEone()
+    this._GXResizeEvent()
+    window.addEventListener("resize", this._GXResizeEvent)
+
     setTimeout(()=>{
       // this.initChart()
     },5000)
@@ -116,7 +120,37 @@ export default {
       this.myChart.setOption(this.option)
     },10000)
   },
+  beforeDestroy(){
+    removeEventListener('resize',this._GXResizeEvent)
+    document.body.style.transform = 'scale(1,1)'
+    document.body.style.msTransform = 'scale(1,1)'
+    document.body.style.mozTransform = 'scale(1,1)'
+    document.body.style.webkitTransform = 'scale(1,1)'
+    document.body.style.oTransform = 'scale(1,1)'
+    document.body.style.transformOrigin = '50% 50% 0'
+    document.body.style.backgroundSize = 'auto'
+    document.body.style.overflow = 'visible'
+  },
   methods: {
+    _GXResizeEvent() {
+      const nDefault_width = 1920;
+      const nDefault_height = 1080;
+      const nClient_width = document.documentElement.clientWidth;
+      const nClient_height = document.documentElement.clientHeight;
+      const nAuot_width = nClient_width / nDefault_width;
+      const nAuot_height = nClient_height / nDefault_height;
+      const jNodeBody = document.body;
+      if(nAuot_width>nAuot_height){
+        jNodeBody.style.transform = `scale(${nAuot_width},${nAuot_height})`;
+        jNodeBody.style.msTransform = `scale(${nAuot_width},${nAuot_height})`;
+        jNodeBody.style.mozTransform = `scale(${nAuot_width},${nAuot_height})`;
+        jNodeBody.style.webkitTransform = `scale(${nAuot_width},${nAuot_height})`;
+        jNodeBody.style.oTransform = `scale(${nAuot_width},${nAuot_height})`;
+        jNodeBody.style.transformOrigin = 'left top';
+        jNodeBody.style.backgroundSize = "100%";
+        jNodeBody.style.overflow = 'hidden';
+      }
+    },
     getEone() {
       var myChart = this.$echarts.init(document.getElementById('main'))
       this.myChart = myChart

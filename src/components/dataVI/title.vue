@@ -30,36 +30,37 @@ export default {
 
 <style lang="less" scoped>
 .title{
-    height: 42px;
+    height: 51px;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
     img{
-        width: 42px;
-        height: 42px;
+        width: 51px;
+        height: 51px;
         display: inline-block;
     }
     .division{
         display: inline-block;
         width: 3px;
-        height: 31px;
+        height: 41px;
         background: #FFFFFF;
         margin-left: 9px;
-        margin-right: 10px;
+        margin-right: 8px;
     }
     ._right{
         display: inline-block;
         margin-top: -8px;
         .right1{
-            height: 20px;
-            font-size: 20px;
+            height: 25px;
+            font-size: 24px;
             font-weight: 400;
             color: #FFFFFF;
             margin-bottom: 6px;
         }
         .right2{
-            height: 15px;
-            font-size: 14px;
+            height: 19px;
+            font-size: 18px;
             font-weight: 300;
             color: #FFFFFF;
         }

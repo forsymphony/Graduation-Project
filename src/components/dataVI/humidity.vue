@@ -7,8 +7,8 @@
  * @FilePath: \Graduation-Project\src\components\dataVI\temperature.vue
 -->
 <template>
-    <div style="position: relative;">
-        <title1 :chinese="chinese" :add="add"  :eng="eng" style="position:absolute;"></title1>
+    <div style="margin-top:22px;position: relative;">
+        <title1 :chinese="chinese" :add="add"  :eng="eng" style="position:absolute;top:24px;left:18px;"></title1>
         <div class="test" id="main2">
         </div>
     </div>
@@ -32,16 +32,45 @@ export default {
         }
     },
     mounted(){
-        this.created()
+        this.getData('460049838501462')
     },
     methods:{
+        getData(deviceNmae){
+            this.$axios.get(`/api/sensorData/getHumidityRealtimeDataByDeviceName?deviceName=${deviceNmae}`).then(
+                (res)=>{
+                    console.log(res.data.data)
+                    let arr = []
+                    let arr2 = []
+                    let i = 0
+                    res.data.data.forEach(ele => {
+                        if(i<12){
+                            let a = ele.updateTime.split(" ")[1].slice(0,5)
+                            arr.push(a)
+                            arr2.push(ele.updateValue)
+                            i++
+                        } else {
+                            return
+                        }
+                    })
+                    this.dataAxis = arr
+                    this.data = arr2
+                    this.created()
+                }
+            )
+        },
         created(){
             let myChart = this.$echarts.init(document.getElementById('main2'))
             let option = {
+                grid:{
+                    left:60,
+                    bottom:55,
+                    top:100
+                },
                 xAxis: {
                     data: this.dataAxis,
                     type: 'category',
                     axisLabel: {
+                        rotate:40,
                         textStyle: {
                             color: '#fff'
                         }
@@ -60,24 +89,26 @@ export default {
                     },
                     z: 10,
                 },
-                legend: {
-                        data:['货架一','货架二'],
-                        left: "73%",
-                        textStyle: {
-                            color:'#0fe0c1'
-                    },
-                    itemHeight:5, //圆点大小
-                    itemWidth:30, 
-                },
+                // legend: {
+                //         data:['货架一','货架二'],
+                //         left: "73%",
+                //         textStyle: {
+                //             color:'#0fe0c1'
+                //     },
+                //     itemHeight:5, //圆点大小
+                //     itemWidth:30, 
+                //     top:40
+                // },
                 tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'shadow'
-                    },
+                    // trigger: 'axis',
+                    // axisPointer: {
+                    //     type: 'shadow'
+                    // },
                     backgroundColor:'#06B16C',
                     textStyle: {
                         color: "rgba(255, 255, 255, 1)"
-                    }
+                    },
+                    formatter: '{c0}%'
                 },
                 yAxis: {
                 type:'value',
@@ -128,33 +159,33 @@ export default {
                     // },
                     data: this.data
                     },
-                    {
-                    name:'货架二',
-                    type: 'bar',
-                    itemStyle: {
-                        color: new this.$echarts.graphic.LinearGradient(
-                        0, 0, 0, 1,
-                        [
-                            {offset: 0, color: '#CE5F97'},
-                            {offset: 1, color: '#ffffff'}
-                        ]
-                        )
-                    },
-                    barWidth: 4,
-                    // emphasis: {
-                    //     itemStyle: {
+                    // {
+                    // name:'货架二',
+                    // type: 'bar',
+                    // itemStyle: {
                     //     color: new this.$echarts.graphic.LinearGradient(
-                    //         0, 0, 0, 1,
-                    //         [
-                    //         {offset: 0, color: '#2378f7'},
-                    //         {offset: 0.7, color: '#2378f7'},
-                    //         {offset: 1, color: '#83bff6'}
-                    //         ]
+                    //     0, 0, 0, 1,
+                    //     [
+                    //         {offset: 0, color: '#CE5F97'},
+                    //         {offset: 1, color: '#ffffff'}
+                    //     ]
                     //     )
-                    //     }
                     // },
-                    data: this.data1
-                    }
+                    // barWidth: 4,
+                    // // emphasis: {
+                    // //     itemStyle: {
+                    // //     color: new this.$echarts.graphic.LinearGradient(
+                    // //         0, 0, 0, 1,
+                    // //         [
+                    // //         {offset: 0, color: '#2378f7'},
+                    // //         {offset: 0.7, color: '#2378f7'},
+                    // //         {offset: 1, color: '#83bff6'}
+                    // //         ]
+                    // //     )
+                    // //     }
+                    // // },
+                    // data: this.data1
+                    // }
                 ]
             };
             myChart.setOption(option)
@@ -166,6 +197,8 @@ export default {
 <style lang="less" scoped>
 .test{
     width: 500px;
-    height: 230px;
+    height: 300px;
+    backdrop-filter: blur(10px);
+    border-radius: 10px 10px 10px 66px;
 }
 </style>
