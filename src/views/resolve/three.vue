@@ -31,9 +31,9 @@
             </div>
         </div>
         <div class="left">
-            <temperature></temperature>
-            <humidity></humidity>
-            <light></light>
+            <temperature ref="temperature"></temperature>
+            <humidity ref="humidity"></humidity>
+            <light ref="light"></light>
         </div>
         <img src="../../../static/img/resolve/three/定位@2x.png" alt="" class="point">
         <div class="centerBack">
@@ -44,7 +44,22 @@
         </div>
         <div class="right">
             <img src="../../../static/img/resolve/three/大棚背景图@2x.png" alt="" class="greenhouseBack">
-            <power></power>
+            <div class="greenhouseArea">
+                <img src="../../../static/img/resolve/three/大棚效果图 @2x.png" alt="" class="greenhouse">
+                <img src="../../../static/img/resolve/three/传感器正常状态.gif" alt="" class="sensor1" v-if="sensor[0]" @click="loadSensor('460049838501462')">
+                <img src="../../../static/img/resolve/three/传感器故障状态.gif" alt="" class="sensorFalse1" v-else>
+                <img src="../../../static/img/resolve/three/传感器正常状态.gif" alt="" class="sensor2" v-if="sensor[1]" @click="loadSensor('460049838501464')">
+                <img src="../../../static/img/resolve/three/传感器故障状态.gif" alt="" class="sensorFalse2" v-else>
+                <img src="../../../static/img/resolve/three/传感器正常状态.gif" alt="" class="sensor3" v-if="sensor[2]" @click="loadSensor('460043159614932')">
+                <img src="../../../static/img/resolve/three/传感器故障状态.gif" alt="" class="sensorFalse3" v-else>
+                <img src="../../../static/img/resolve/three/传感器正常状态.gif" alt="" class="sensor4" v-if="sensor[3]" @click="loadSensor('460043159614931')">
+                <img src="../../../static/img/resolve/three/传感器故障状态.gif" alt="" class="sensorFalse4" v-else>
+                <img src="../../../static/img/resolve/three/传感器正常状态.gif" alt="" class="sensor5" v-if="sensor[4]" @click="loadSensor('460043159614939')">
+                <img src="../../../static/img/resolve/three/传感器故障状态.gif" alt="" class="sensorFalse5" v-else>
+                <img src="../../../static/img/resolve/three/传感器正常状态.gif" alt="" class="sensor6" v-if="sensor[5]" @click="loadSensor('460043159614933')">
+                <img src="../../../static/img/resolve/three/传感器故障状态.gif" alt="" class="sensorFalse6" v-else>
+            </div>
+            <power ref="power"></power>
         </div>
       <!-- <img src="../../../static/img/resolve/three/backImg.png" alt=""> -->
   </div>
@@ -61,7 +76,14 @@ export default {
     data(){
         return {
             weather:{},
-            showImg:0
+            showImg:0,
+            sensor:[1,1,1,1,1,1]
+            // sensor1:1,
+            // sensor2:1,
+            // sensor3:1,
+            // sensor4:1,
+            // sensor5:1,
+            // sensor6:1
         }
     },
     components:{
@@ -71,7 +93,7 @@ export default {
         light,
         power
     },
-    mounted(){
+    beforeMount(){
         window.scrollTo(0,0)
         this.loadData()
         this.getData()
@@ -110,15 +132,11 @@ export default {
                 jNodeBody.style.overflow = 'hidden';
             }
         },
-        logData(){
-            this.$refs.co2.getData('460049838501463')
-        },
         loadData(){
             this.$axios.get('https://restapi.amap.com/v3/weather/weatherInfo?key=da42475dc14a0de6dd2377da0506f796&city=330600').then(
                 (res)=>{
                     this.weather = res.data.lives[0]
                     let date = new Date()
-                    console.log(date);
                     const year = date.getFullYear()
                     const month = date.getMonth()
                     const day = date.getDate()
@@ -170,9 +188,22 @@ export default {
         getData(){
             this.$axios.get('/api/DeviceInfoController/getAllDeviceInfos').then(
                 (res)=>{
-                    console.log(res)
+                    // console.log(res.data.data)
+                    for(let i = 0;i < 6;i++) {
+                        if(res.data.data[i].isOnline == 0) {
+                            this.sensor[i] = 0
+                        }
+                    }
+                    console.log(this.sensor);
                 }
             )
+        },
+        loadSensor(num){
+            this.$refs.temperature.getData(num)
+            this.$refs.humidity.getData(num)
+            this.$refs.co2.getData(num)
+            this.$refs.light.getData(num)
+            this.$refs.power.getData(num)
         }
     }
 }
@@ -315,6 +346,83 @@ export default {
         .greenhouseBack{
             width: 699px;
             height: 636px;
+        }
+        .greenhouseArea{
+            .greenhouse{
+                width: 660px;
+                height: 596px;
+                position: absolute;
+                top: 20px;
+                left: 19px;
+            }
+            .sensor1{
+                position: absolute;
+                top: 147px;
+                left: 52px;
+            }
+            .sensorFalse1{
+                position: absolute;
+                top: 166px;
+                left: 65px;
+                cursor: not-allowed;
+            }
+            .sensor2{
+                position: absolute;
+                top: 146px;
+                left: 189px;
+            }
+            .sensorFalse2{
+                position: absolute;
+                top: 167px;
+                left: 202px;
+                cursor: not-allowed;
+            }
+            .sensor3{
+                position: absolute;
+                top: 147px;
+                left: 311px;
+            }
+            .sensorFalse3{
+                position: absolute;
+                top: 167px;
+                left: 324px;
+                cursor: not-allowed;
+            }
+            .sensor4{
+                position: absolute;
+                top: 147px;
+                left: 442px;
+            }
+            .sensorFalse4{
+                position: absolute;
+                top: 168px;
+                left: 454px;
+                cursor: not-allowed;
+            }
+            .sensor5{
+                position: absolute;
+                top: 147px;
+                left: 578px;
+            }
+            .sensorFalse5{
+                position: absolute;
+                top: 167px;
+                left: 592px;
+                cursor: not-allowed;
+            }
+            .sensor6{
+                position: absolute;
+                top: 514px;
+                left: 578px;
+                width: 86px;
+            }
+            .sensorFalse6{
+                position: absolute;
+                top: 523px;
+                left: 581px;
+                width: 76px;
+                cursor: not-allowed;
+            }
         }
     }
 }

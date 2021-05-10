@@ -46,7 +46,6 @@ export default {
         getData(deviceNmae){
             this.$axios.get(`/api/sensorData/getBatteryRealtimeDataByDeviceName?deviceName=${deviceNmae}`).then(
                 (res)=>{
-                    console.log(res.data.data)
                     let arr = []
                     let arr2 = []
                     let i = 0

@@ -38,7 +38,6 @@ export default {
         getData(deviceNmae){
             this.$axios.get(`/api/sensorData/getTemperatureRealtimeDataByDeviceName?deviceName=${deviceNmae}`).then(
                 (res)=>{
-                    console.log(res)
                     let arr = []
                     let arr2 = []
                     let i = 0
