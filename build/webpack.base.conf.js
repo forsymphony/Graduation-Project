@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-12-29 09:26:04
+ * @LastEditTime: 2021-03-30 11:12:27
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Graduation-Project\build\webpack.base.conf.js
+ */
 'use strict'
 const path = require('path')
 const utils = require('./utils')
@@ -19,8 +27,8 @@ module.exports = {
     path: config.build.assetsRoot,
     filename: '[name].js',
     publicPath: process.env.NODE_ENV === 'production'
-      ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+      ? './'+ config.build.assetsPublicPath
+      : './'+ config.dev.assetsPublicPath
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
@@ -81,5 +89,12 @@ module.exports = {
   externals: {
     'BMap': 'BMap',
     'AMap': 'AMap'
-  }
+  },
+  // plugins:[
+  //   new webpack.LoaderOptionsPlugin({
+  //     vue: {
+  //       postcss: [require('postcss-px2rem')({'remUnit': 100,'baseDpr':2})]
+  //     },
+  //   })
+  // ]
 }
