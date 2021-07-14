@@ -4,7 +4,7 @@
         <div class="areaArea">
           <h2 style="margin-top:10px;">
             <i class="iconfont">&#xe617;</i>
-            企业的介绍
+            企业介绍
           </h2>
           <div class="introduction">
             <p>
