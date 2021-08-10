@@ -32,7 +32,7 @@
         <h1>毫米波产品</h1>
         <div class="module3">
           <div class="module3Area">
-            <div class="module3Button" v-for="(val,index) in module3List" :key="index">
+            <div class="module3Button" id="module3Button" v-for="(val,index) in module3List" :key="index">
               <div class="button3Area">
                 <button class="button3">{{val.title}}</button>
               </div>
@@ -50,24 +50,43 @@
 export default {
   data(){
     return{
+      // module1List:[
+      //   {src:"../../../static/img/product/1.png"},
+      //   {src:"../../../static/img/product/2.png"},
+      //   {src:"../../../static/img/product/3.png"},
+      //   {src:"../../../static/img/product/4.jpg"},
+      //   {src:"../../../static/img/product/5.png"},
+      //   {src:"../../../static/img/product/6.png"},
+      //   {src:"../../../static/img/product/7.png"},
+      //   {src:"../../../static/img/product/8.png"},
+      // ],
       module1List:[
-        {src:"../../../static/img/product/1.png"},
-        {src:"../../../static/img/product/2.png"},
-        {src:"../../../static/img/product/3.png"},
-        {src:"../../../static/img/product/4.jpg"},
-        {src:"../../../static/img/product/5.png"},
-        {src:"../../../static/img/product/6.png"},
-        {src:"../../../static/img/product/7.png"},
-        {src:"../../../static/img/product/8.png"},
+        {src:"./static/img/product/1.png"},
+        {src:"./static/img/product/2.png"},
+        {src:"./static/img/product/3.png"},
+        {src:"./static/img/product/4.jpg"},
+        {src:"./static/img/product/5.png"},
+        {src:"./static/img/product/6.png"},
+        {src:"./static/img/product/7.png"},
+        {src:"./static/img/product/8.png"},
       ],
+      // module2List:[
+      //   {src:"../../../static/img/product/9.png"},
+      //   {src:"../../../static/img/product/10.png"},
+      //   {src:"../../../static/img/product/11.png"},
+      //   {src:"../../../static/img/product/12.png"},
+      //   {src:"../../../static/img/product/13.png"},
+      //   {src:"../../../static/img/product/14.png"},
+      //   {src:"../../../static/img/product/15.png"},
+      // ],
       module2List:[
-        {src:"../../../static/img/product/9.png"},
-        {src:"../../../static/img/product/10.png"},
-        {src:"../../../static/img/product/11.png"},
-        {src:"../../../static/img/product/12.png"},
-        {src:"../../../static/img/product/13.png"},
-        {src:"../../../static/img/product/14.png"},
-        {src:"../../../static/img/product/15.png"},
+        {src:"./static/img/product/9.png"},
+        {src:"./static/img/product/10.png"},
+        {src:"./static/img/product/11.png"},
+        {src:"./static/img/product/12.png"},
+        {src:"./static/img/product/13.png"},
+        {src:"./static/img/product/14.png"},
+        {src:"./static/img/product/15.png"},
       ],
       module3List:[
        {title:"毫米波振荡器"},
@@ -86,12 +105,17 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@media screen and (max-width: 676px){
+  #module3Button{
+    width: 90%;
+  }
+}
 .product{
   width: 100%;
   .productArea{
     background: #eee;
     width: 65%;
-    min-width: 875px;
+    // min-width: 875px;
     margin: 0px auto 70px;
     text-align: center;
     h1{
@@ -144,6 +168,7 @@ export default {
           margin: 5px 0;
           padding: 0 5px;
           width: 33.333333%;
+          // width:90%;
           .button3Area{
             .button3{
               width: 80%;

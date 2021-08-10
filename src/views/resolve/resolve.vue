@@ -3,8 +3,8 @@
       <div class="resolveArea">
         <h2>行业解决方案</h2>
         <div class="show1Area">
-          <div class="show1">
-            <div class="title">移动充电与感知应用</div>
+          <div class="show1" @click="goTo">
+            <div class="title">新能源汽车智能监控系统解决</div>
             <div class="img1">
               <div class="showImg">
                 <img class="showImg1" src="../../../static/img/resolve/solve01.jpg" alt="">
@@ -14,7 +14,7 @@
               </div>
             </div>
           </div>
-          <div class="show1">
+          <div class="show1" @click="goTo1">
             <div class="title">新能源汽车智能监控系统解决</div>
             <div class="img1">
               <div class="showImg">
@@ -32,7 +32,14 @@
 
 <script>
 export default {
-
+  methods:{
+    goTo(){
+      this.$router.push({ path: '/resolve3', replace: false });
+    },
+    goTo1() {
+      this.$router.push({ path: '/resolve2', replace: true });
+    }
+  }
 }
 </script>
 
@@ -40,7 +47,7 @@ export default {
 .resolve{
   .resolveArea{
     width: 95%;
-    min-width: 1800px;
+    // min-width: 1800px;
     margin: 40px auto 309px;
     padding: 30px;
     h2{
@@ -54,8 +61,8 @@ export default {
       display: flex;
       justify-content: space-evenly;
       .show1{
-        width: 23%;
-        height: 500px;
+        // width: 23%;
+        // height: 500px;
         margin-top: 10px;
         background: #fff;
         border-radius: 2px;

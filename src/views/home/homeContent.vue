@@ -1,5 +1,5 @@
 <template>
-  <div class="homeContent">
+  <div class="homeContent" ref="pronbit">
       <div class="contentArea">
         <div class="whyUs">
           <h2 class="whyH2">凭撒子选我们？</h2>
@@ -44,7 +44,7 @@
           </div>
         </div>
         </div>
-        <div class="show1">
+        <div class="show1 show2">
           <div class="show1Area">
             <div class="showImg1">
               <img src="../../../static/img/content/img3.png" alt="" class="Img">
@@ -68,8 +68,8 @@
             <div class="AdShow">
               <div class="AdShow1">
                 <div class="showItem1Img">
-                  <div class="text"></div>
-                  <!-- <img src="../../../static/img/content/smallicon.png" alt=""  class="img1"> -->
+                  <!-- <div class="text"></div> -->
+                  <img src="../../../static/img/content/smallicon.png" alt=""  class="img1">
                   <!-- 11920*1080   42*38 -->
                 </div>
                 <div class="item1Introduce">
@@ -189,6 +189,9 @@ export default {
       pageSize:5
     }
   },
+  mounted() {
+    window.addEventListener('scroll',this.handleScrollx,true)
+  },
   methods:{
     change(a){
       if(this.total == 14 )
@@ -202,7 +205,29 @@ export default {
       }
       else
       this.total = 5
-    }
+    },
+    handleScrollx() {
+      // console.log('滚动高度',window.pageYOffset)
+      if(window.pageYOffset>390){
+        // console.log(docum);
+        let div1 = document.getElementsByClassName('show1')[0]
+        div1.style.transform = 'translateY(100px)'
+        div1.style.opacity = 1
+      }
+      if(window.pageYOffset>730){
+        // console.log(docum);
+        let div1 = document.getElementsByClassName('show2')[0]
+        div1.style.transform = 'translateY(-100px)'
+        div1.style.opacity = 1
+      }
+      if(window.pageYOffset>1300){
+        // console.log(docum);
+        let div1 = document.getElementsByClassName('Advantage')[0]
+        div1.style.transform = 'translateX(100px)'
+        div1.style.opacity = 1
+      }
+      // console.log('距离顶部高度',this.$refs.pronbit.getBoundingClientRect().top)
+    },
   }
 }
 </script>
@@ -223,16 +248,16 @@ h1{
   // margin: 0 auto; 
   // text-align: center;
   .contentArea{
-    width: 1440px;
+    // width: 1440px;
     margin: 0 auto; 
-  text-align: center;
+    text-align: center;
     .whyUs{
-      width: 1440px;
+      // width: 1440px;
       height: 480px;
       margin-top: 184px;
       text-align: center;
       .whyH2{
-        width: 1440px;
+        // width: 1440px;
         text-align: center;
         margin: 50px 0;
         font-size: 26px;
@@ -260,10 +285,15 @@ h1{
       }
     }
     .show1{
-      width: 1440px;
+      // width: 1440px;
+      position: relative;
       height: 485px;
       display: flex;
       justify-content: center;
+      margin-top: -100px;
+      // transform :translateY(-100px);
+      opacity: 0;
+      transition: all 1s;
       .show1Area{
         width: 1000px;
         height: 485px;
@@ -328,6 +358,12 @@ h1{
         }
       }
     }
+    .show2{
+      // transform :translateY(100px);
+      margin-top: 100px;
+      opacity: 0;
+      transition: all 1s;
+    }
     .Advantage{
       width: 100%;
       background: #fff;
@@ -336,6 +372,9 @@ h1{
       position: relative;
       display: flex;
       justify-content: center;
+      margin-left: -100px;
+      opacity: 0;
+      transition: all 1s;
       .AdvantageArea{
         text-align: center;
         width: 1200px;
@@ -394,7 +433,7 @@ h1{
     .NewItem2{
       margin-top: 170px;
       .newArea{
-         padding-top: 20px;
+         padding-top: 50px;
         // height: 820px;
         width: 60%;
         margin: 0 auto 50px;
