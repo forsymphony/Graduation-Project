@@ -10,7 +10,7 @@
                 <!-- 11920*1080   115*115 下两张同 -->
               </div>
               <div class="title">聚焦</div>
-              <div class="content">高素质人才团队，专注于技术研发test2</div>
+              <div class="content">高素质人才团队，专注于技术研发这是test3</div>
             </div>
             <div class="bigger">
               <div>
